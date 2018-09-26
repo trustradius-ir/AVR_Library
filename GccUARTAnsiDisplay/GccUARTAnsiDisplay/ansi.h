@@ -89,6 +89,8 @@ extern void ansi_movescursor_up(int8_t line);
 extern void ansi_movescursor_down(int8_t line);
 extern void ansi_movescursor_right(int8_t space);
 extern void ansi_movescursor_left(int8_t space);
+extern void ansi_movescroll_up(int8_t page);
+extern void ansi_movescroll_down(int8_t page);
 extern void ansi_savecursor_position(void);
 extern void ansi_restorecursor_position(void);
 extern void ansi_set_attrcolor(int8_t attribute,int8_t color);

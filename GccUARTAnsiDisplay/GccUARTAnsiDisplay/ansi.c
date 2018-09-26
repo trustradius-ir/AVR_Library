@@ -97,6 +97,20 @@ void ansi_movescursor_left(int8_t space)
 	uart_puts(Buffer);
 }
 
+void ansi_movescroll_up(int8_t page)
+{
+	char Buffer[10];
+	sprintf(Buffer,"\e[%iS",page);
+	uart_puts(Buffer);
+}
+
+void ansi_movescroll_down(int8_t page)
+{
+	char Buffer[10];
+	sprintf(Buffer,"\e[%iT",page);
+	uart_puts(Buffer);
+}
+
 void ansi_savecursor_position(void)
 {
 	char Buffer[10];
