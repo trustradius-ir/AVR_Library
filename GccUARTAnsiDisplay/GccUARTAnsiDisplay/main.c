@@ -32,7 +32,7 @@ ISR(TIMER0_OVF_vect)
 	if (StartTimer == 1)
 	{
 		Timer++;
-		if (Timer / 50 >= 1)
+		if (Timer / 1000 >= 1)
 		{
 			Timer = 0;
 			Second++;
