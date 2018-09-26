@@ -21,7 +21,7 @@
 #include "ansi.h"
 
 // Declare your global variables here
-
+uint8_t StartTimer = 0;
 
 // ISR definition
 int Timer = 0;
@@ -29,18 +29,21 @@ int Second = 0;
 char Buffer[4];
 ISR(TIMER0_OVF_vect)
 {
-	Timer++;
-	if (Timer / 1000 >= 1)
+	if (StartTimer == 1)
 	{
-		Timer = 0;
-		Second++;
+		Timer++;
+		if (Timer / 50 >= 1)
+		{
+			Timer = 0;
+			Second++;
 		
-		ansi_savecursor_position();
+			ansi_savecursor_position();
 		
-		sprintf(Buffer,"%02d:%02d:%02d",Second / 3600,Second / 60,Second % 3600);
-		ansi_write_xcenter(16,Buffer);
+			sprintf(Buffer,"%02d:%02d:%02d",Second / 3600,(Second % 3600)  / 60,(Second % 3600) % 60);
+			ansi_write_xcenter(16,Buffer);
 		
-		ansi_restorecursor_position();
+			ansi_restorecursor_position();
+		}
 	}
 }
 
@@ -204,6 +207,7 @@ int main(void)
     sei();
 	
 	
+	
 	ansi_set_attrcolor(0,37);
 	ansi_clearscreen();
 	
@@ -231,7 +235,7 @@ int main(void)
 	ansi_set_attrcolorbc(0,ANSI_FC_WHITE,ANSI_BC_BLACK);
 	ansi_write_pos(5,20,">>");
 	
-
+	StartTimer = 1;
 	
 	char ReceivedData;
     while (1) 
