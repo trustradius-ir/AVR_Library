@@ -9,8 +9,8 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
-#include "KS0180.h"
-#include "KS0180_Fonts.h"
+#include "KS0108.h"
+#include "KS0108_Fonts.h"
 
 int main(void)
 {		

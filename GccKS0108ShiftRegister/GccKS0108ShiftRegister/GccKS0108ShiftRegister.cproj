@@ -12,9 +12,9 @@
     <OutputFileName>$(MSBuildProjectName)</OutputFileName>
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
-    <AssemblyName>GccKS0180ShiftRegister</AssemblyName>
-    <Name>GccKS0180ShiftRegister</Name>
-    <RootNamespace>GccKS0180ShiftRegister</RootNamespace>
+    <AssemblyName>GccKS0108ShiftRegister</AssemblyName>
+    <Name>GccKS0108ShiftRegister</Name>
+    <RootNamespace>GccKS0108ShiftRegister</RootNamespace>
     <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
@@ -120,13 +120,13 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="KS0180.c">
+    <Compile Include="KS0108.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="KS0180.h">
+    <Compile Include="KS0108.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="KS0180_Fonts.h">
+    <Compile Include="KS0108_Fonts.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">

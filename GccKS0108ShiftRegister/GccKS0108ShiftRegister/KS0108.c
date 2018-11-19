@@ -1,5 +1,5 @@
 ﻿/*
- * KS0180.c
+ * KS0108.c
  *
  * Created: 28/08/1397 07:13:10 ق.ظ
  *  Author: a.nourbakhsh
@@ -7,7 +7,7 @@
 
 
 
-#include "KS0180.h"
+#include "KS0108.h"
 
 
 #ifndef ReserveRegister
